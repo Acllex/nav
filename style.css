@@ -1,0 +1,77 @@
+.icon {
+  width: 0.68rem;
+  height: 0.68rem;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search {
+  width: 3.38rem;
+  height: 0.4rem;
+  margin-top: 0.52rem;
+  display: flex;
+  justify-content: space-between;
+}
+.search > input {
+  width: 2.4rem;
+  height: 0.4rem;
+  border: #ddd solid 0.01rem;
+  border-radius: 0.04rem;
+}
+.search > button {
+  width: 0.8rem;
+  height: 0.4rem;
+  background-color: #1783a6;
+  border-style: none;
+  color: #fff;
+  border-radius: 0.04rem;
+  font-size: 0.18rem;
+}
+main {
+  width: 100%;
+  margin-top: 0.38rem;
+  display: flex;
+  justify-content: center;
+}
+#blocks {
+  width: 3.38rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#blocks > a li {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: #ddd solid 0.01rem;
+  margin-bottom: 0.18rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.initial {
+  font-size: 0.8rem;
+}
+#blocks > a > li > span:nth-child(2) {
+  font-size: 0.18rem;
+}
+.icon-jia_sekuai {
+  font-size: 0.68rem;
+}
+#add > li {
+  padding-top: 0.14rem;
+}
+#add > li > span {
+  padding-top: 0.1rem;
+}

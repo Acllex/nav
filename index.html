@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN" rem="390">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>优航</title>
+  </head>
+  <body>
+    <header>
+      <form
+        class="search"
+        action="https://baidu.com/s"
+        method="get"
+        target="_blank"
+      >
+        <input name="wd" type="text" />
+        <button type="submit">搜索</button>
+      </form>
+    </header>
+    <main>
+      <ul id="blocks">
+        <a href="https://www.acfun.cn">
+          <li>
+            <span class="initial">A</span>
+            <span>acfun.cn</span>
+          </li>
+        </a>
+        <a href="https://">
+          <li>
+            <span class="initial">A</span>
+            <span>acfun.com</span>
+          </li>
+        </a>
+        <a id="add">
+          <li>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-jia_sekuai"></use>
+            </svg>
+            <span>新增网址</span>
+          </li>
+        </a>
+      </ul>
+    </main>
+    <footer></footer>
+
+    <script src="//at.alicdn.com/t/font_3113378_m9pxoql9vvk.js"></script>
+    <script src="jQuery.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
