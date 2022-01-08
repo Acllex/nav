@@ -23,6 +23,9 @@ class UrlMethods {
         <li my-href=${urlObj.href}>
             <span class="initial">${urlObj.hostname[0].toUpperCase()}</span>
             <span>${urlObj.hostname}</span>
+            <svg class="icon caidan" aria-hidden="true">
+                <use xlink:href="#icon-youcecaidan"></use>
+            </svg>
         </li>`);
         return this;
     }
@@ -51,7 +54,7 @@ class UrlMethods {
             return;
         }
         $(e.currentTarget).append(`
-            <div id="edit">
+            <div id='edit'>
               <span id='alter'>修改</span>
               <span id='remove'>删除</span>
             </div>`)
@@ -64,10 +67,22 @@ class UrlMethods {
     }
     alter(e, urlObj) {
         const index = $(e.currentTarget).index(); // 获得元素下标
-        console.log(this.hashMap[index], urlObj);
         $(e.currentTarget).attr('my-href', urlObj.href).children().eq(0).html(urlObj.hostname[0].toUpperCase()).end().eq(1).html(urlObj.hostname);
         Object.assign(this.hashMap[index], { 'href': urlObj.href, 'hostname': urlObj.hostname })
         return this;
+    }
+    edit(e) {
+        if ($(e.target).attr('id') === 'remove') {
+            this.deleteUrl(e).saveUrl();
+        } else if ($(e.target).attr('id') === 'alter') {
+            $('#edit').remove();
+            const url = prompt('请输入新网址');
+            const urlObj = this.getUrl(url);
+            if (urlObj === null) {
+                return;
+            }
+            this.alter(e, urlObj).saveUrl();
+        }
     }
 }
 
@@ -96,16 +111,8 @@ const touch = {
             if ($(e.target).attr('id') !== 'edit' && $(e.target).parents('#edit').length !== 1) {
                 $('#edit').remove();
                 window.open($(e.currentTarget).attr('my-href'));
-            } else if ($(e.target).attr('id') === 'remove') {
-                urlMethod.deleteUrl(e).saveUrl();
-            } else if ($(e.target).attr('id') === 'alter') {
-                $('#edit').remove();
-                const url = prompt('请输入新网址');
-                const urlObj = urlMethod.getUrl(url);
-                if (urlObj === null) {
-                    return;
-                }
-                urlMethod.alter(e, urlObj).saveUrl();
+            } else {
+                urlMethod.edit(e)
             }
         }
         return false;
@@ -126,7 +133,22 @@ $('#add').on('click', () => {
     }
     urlMethod.addUrl(urlObj).saveUrl(urlObj);
 });
+$('#blocks').on('click', 'li', (e) => {
+    if ($(e.currentTarget).attr('id') === 'add') {
+        return;
+    }
+    if ($(e.target).attr('class') !== 'icon caidan' && $(e.target).attr('id') !== 'edit' && $(e.target).parents('#edit').length !== 1) {
+        window.open($(e.currentTarget).attr('my-href'));
+    } else if ($(e.target).attr('class') === 'icon caidan') {
+        urlMethod.showEdit(e);
+    } else {
+        urlMethod.edit(e)
+    }
+})
 
-$(`*:not(li)`).on('click', () => {
+$(`*:not(li)`).on('click', (e) => {
+    if ($(e.target).attr('class') === 'icon caidan') {
+        return;
+    }
     $('#edit').remove();
 })

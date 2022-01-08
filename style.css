@@ -1,11 +1,3 @@
-.icon {
-  width: 0.68rem;
-  height: 0.68rem;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
-
 body {
   width: 100%;
   height: 100vh;
@@ -15,93 +7,220 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-.search {
-  width: 3.38rem;
-  height: 0.4rem;
-  margin-top: 0.52rem;
-  display: flex;
-  justify-content: space-between;
+
+@media screen and (max-width: 768px) {
+  .icon {
+    width: 0.68rem;
+    height: 0.68rem;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+  .search {
+    width: 3.38rem;
+    height: 0.4rem;
+    margin-top: 0.52rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search > input {
+    width: 2.4rem;
+    height: 0.4rem;
+    border: #ddd solid 0.01rem;
+    border-radius: 0.04rem;
+  }
+  .search > button {
+    width: 0.8rem;
+    height: 0.4rem;
+    background-color: #1783a6;
+    border-style: none;
+    color: #fff;
+    border-radius: 0.04rem;
+    font-size: 0.18rem;
+  }
+  main {
+    width: 100%;
+    margin-top: 0.38rem;
+    display: flex;
+    justify-content: center;
+  }
+  #blocks {
+    width: 3.38rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #blocks > li {
+    position: relative;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: #ddd solid 0.01rem;
+    margin-bottom: 0.18rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .initial {
+    font-size: 0.8rem;
+  }
+  #blocks > li > span:nth-child(2) {
+    font-size: 0.18rem;
+  }
+  .icon-jia_sekuai {
+    font-size: 0.68rem;
+  }
+  #add {
+    padding-top: 0.14rem;
+  }
+  #add > span {
+    padding-top: 0.1rem;
+  }
+  #edit {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #edit > span {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.34rem;
+    text-align: center;
+    line-height: 0.34rem;
+    border-radius: 0.04rem;
+    font-size: 0.16rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    color: #fff;
+  }
+  #edit > span:first-child {
+    background-color: #1783a6;
+  }
+  #edit > span:last-child {
+    background-color: #ff4040;
+  }
+  .caidan {
+    display: none;
+  }
 }
-.search > input {
-  width: 2.4rem;
-  height: 0.4rem;
-  border: #ddd solid 0.01rem;
-  border-radius: 0.04rem;
-}
-.search > button {
-  width: 0.8rem;
-  height: 0.4rem;
-  background-color: #1783a6;
-  border-style: none;
-  color: #fff;
-  border-radius: 0.04rem;
-  font-size: 0.18rem;
-}
-main {
-  width: 100%;
-  margin-top: 0.38rem;
-  display: flex;
-  justify-content: center;
-}
-#blocks {
-  width: 3.38rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-#blocks > li {
-  position: relative;
-  width: 1.6rem;
-  height: 1.6rem;
-  border: #ddd solid 0.01rem;
-  margin-bottom: 0.18rem;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.initial {
-  font-size: 0.8rem;
-}
-#blocks > li > span:nth-child(2) {
-  font-size: 0.18rem;
-}
-.icon-jia_sekuai {
-  font-size: 0.68rem;
-}
-#add {
-  padding-top: 0.14rem;
-}
-#add > span {
-  padding-top: 0.1rem;
-}
-#edit {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#edit > span {
-  display: inline-block;
-  width: 0.8rem;
-  height: 0.4rem;
-  text-align: center;
-  line-height: 0.4rem;
-  border-radius: 0.1rem;
-  font-size: 0.16rem;
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-  color: #fff;
-}
-#edit > span:first-child {
-  background-color: #1783a6;
-}
-#edit > span:last-child {
-  background-color: #ff4040;
+
+@media screen and (min-width: 768px) {
+  .icon {
+    width: 68px;
+    height: 68px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+  .search {
+    width: 700px;
+    height: 60px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search > input {
+    width: 500px;
+    height: 60px;
+    border: #ddd solid 1px;
+    border-radius: 4px;
+  }
+  .search > button {
+    width: 160px;
+    height: 60px;
+    background-color: #1783a6;
+    border-style: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 28px;
+  }
+  main {
+    width: 900px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  #blocks {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #blocks::after {
+    content: "";
+    flex: auto;
+  }
+  #blocks > li {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border: #ddd solid 1px;
+    margin: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .initial {
+    font-size: 80px;
+  }
+  #blocks > li > span:nth-child(2) {
+    font-size: 20px;
+  }
+
+  #add {
+    padding-top: 14px;
+  }
+  #add > span {
+    padding-top: 10px;
+  }
+  #edit {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #edit > span {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  #edit > span:first-child {
+    background-color: #1783a6;
+  }
+  #edit > span:last-child {
+    background-color: #ff4040;
+  }
+  .caidan {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 30px;
+    text-align: center;
+  }
+  #blocks > li:hover .caidan {
+    display: block;
+  }
 }
