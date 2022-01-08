@@ -49,7 +49,8 @@ main {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-#blocks > a li {
+#blocks > li {
+  position: relative;
   width: 1.6rem;
   height: 1.6rem;
   border: #ddd solid 0.01rem;
@@ -63,15 +64,44 @@ main {
 .initial {
   font-size: 0.8rem;
 }
-#blocks > a > li > span:nth-child(2) {
+#blocks > li > span:nth-child(2) {
   font-size: 0.18rem;
 }
 .icon-jia_sekuai {
   font-size: 0.68rem;
 }
-#add > li {
+#add {
   padding-top: 0.14rem;
 }
-#add > li > span {
+#add > span {
   padding-top: 0.1rem;
+}
+#edit {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#edit > span {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.4rem;
+  text-align: center;
+  line-height: 0.4rem;
+  border-radius: 0.1rem;
+  font-size: 0.16rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  color: #fff;
+}
+#edit > span:first-child {
+  background-color: #1783a6;
+}
+#edit > span:last-child {
+  background-color: #ff4040;
 }
