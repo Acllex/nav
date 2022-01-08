@@ -152,3 +152,34 @@ $(`*:not(li)`).on('click', (e) => {
     }
     $('#edit').remove();
 })
+let keyArr = [];
+$(document).on('keydown', (e) => {
+    const { key } = e;
+    if (keyArr.length < 2) {
+        keyArr.push(key);
+    }
+    const url = urlMethod.hashMap.filter((value) => {
+        if (value.hostname.slice(0, 1) === keyArr[0]) {
+            return value;
+        }
+    })
+    if (url.length === 0) {
+        keyArr = [];
+        return;
+    }
+    setTimeout(() => {
+        if (keyArr.length === 0) {
+            return;
+        }
+        if (keyArr[1] === undefined || isNaN(keyArr[1] - 1)) {
+            window.open(url[0].href);
+        } else {
+            try {
+                window.open(url[keyArr[1] - 1].href);
+            } catch (error) {
+                console.log('没有的标签');
+            }
+        }
+        keyArr = []
+    }, 800)
+})
